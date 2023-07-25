@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+
+	<h1> Задача 2</h1>
+
+	<p> Задача 2. Дано інформацію про прибуток К магазинів протягом тижня. Знайти : </p>
+
+
+	<script>
+		//======================================================== Задача 2. =======================================================================
+
+		// -----------Задача 2. Дано інформацію про прибуток К магазинів протягом тижня. Знайти :
+
+		//-----------------  1  Вводимо необхідні дані   ----------------------------------
+		const weak = 7 //додаю const тиждень (7 днів)
+
+
+		// ------------------створюю функцію генеруючу двовимірний масив---------------------------------
+
+		// отримую random min i max 
+
+		function getRanndomNum(min, max) {
+			return min + Math.floor(Math.random() * (max - min + 1))
+		}
+		// отримую одновимірний масив ----------------------------------
+
+		function getArr(arrLength, min, max) {
+			let arr = []
+			for (let i = 0; i < arrLength; i++) {
+				let item = getRanndomNum(min, max)
+				arr.push(item)
+			}
+			return arr
+		}
+
+		// Отримую двовимірний масив-----------------------------------
+
+		function getTable(tableLength, arrLength, min, max) {
+			let table = []
+			for (j = 0; j < tableLength; j++) {
+				let tableRow = getArr(arrLength, min, max)
+				table.push(tableRow)
+			}
+			return table
+		}
+
+		document.write(`<h2> Задача 2. Дано інформацію про прибуток К магазинів протягом тижня :
+</h2>`)
+
+		let tableIncome = getTable(9, 7, 5, 30)
+		document.write(`Базовий Масив прибутку К магазинів  протягом тижня : <br> ${tableIncome}<br><br>`)
+		console.log(tableIncome)
+
+
+
+
+		// ------------------  1) Знайти загальний прибуток кожного масиву за тиждень;
+		let totalIncomeByWeak = 0
+		let sumByWeak = []
+		for (let shopInd = 0; shopInd < tableIncome.length; shopInd++) {
+			for (let dayColumn = 0; dayColumn < weak; dayColumn++) {
+				totalIncomeByWeak += tableIncome[shopInd][dayColumn]
+
+			}
+			sumByWeak.push(totalIncomeByWeak)
+
+		}
+
+		// console.log(totalIncomeByWeak)
+		// console.log(sumByWeak)
+
+		document.write(`1 Загальний прибуток кожного масиву за тиждень:
+  ${sumByWeak}<br><br>`)
+
+
+		//....................................................................................................
+
+
+		//------2) загальний прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.);
+
+
+		function getTotalIncomeByDays(array) {
+			let totalProfitByDays = []
+			let sum = 0
+			for (let i = 0; i < array[0].length; i++) {
+				for (let j = 0; j < array.length; j++) {
+
+					sum += tableIncome[j][i]
+				}
+				totalProfitByDays.push(sum)
+			}
+			return totalProfitByDays
+		}
+		let totalIcomeByDay = getTotalIncomeByDays(tableIncome)
+		document.write(`2 прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д. ${totalIcomeByDay}<br><br>`)
+
+
+
+		// ----- 3 загальний прибуток за вихідні дні -----------------------------------------------------------
+
+
+		let totalIncomeWeakendsDay = 0
+		for (let shops = 0; shops < tableIncome.length; shops++) {
+			for (let dayIncome = 6; dayIncome < weak; dayIncome++) {
+				totalIncomeWeakendsDay += tableIncome[shops][dayIncome]
+			}
+
+		}
+		document.write(`3 загальний прибуток за вихідні дні: ${totalIncomeWeakendsDay}<br><br>`)
+
+		// ------------ 4 -  максимальний прибуток за середу ----------------------------------
+
+		function getMaxValueWenthday(arr) {
+			let max = 0
+			for (let shops = 0; shops < tableIncome.length; shops++) {
+				for (let dayIncome = 2; dayIncome < 3; dayIncome++) {
+					if (arr[shops][dayIncome] > max)
+						max += arr[shops][dayIncome]
+				}
+				return max
+			}
+		}
+		let maxValueWenthday = getMaxValueWenthday(tableIncome)
+
+		document.write(`4.  максимальний прибуток за середу ${maxValueWenthday}<br><br>`)
+
+
+
+		// ---------5) сформувати загальний список (одновимірний масив) зі значенням, які що більші за 20
+
+		let icomeValueGreater20 = tableIncome.flat(2).filter(el => el > 20)
+
+		document.write(`5 сформувати загальний список (одновимірний масив) зі значенням, які що більші за 20
+ : ${icomeValueGreater20} <br> <br>`)
+		console.log(icomeValueGreater20)
+
+
+		// -------5  відсортувати кожен тиждень за зростанням 
+
+		let sortEachWeakByGrowth = []
+		for (let shopInd = 0; shopInd < tableIncome.length; shopInd++) {
+			sortEachWeakByGrowth = tableIncome[shopInd].sort((el1, el2) => el1 - el2)
+			console.log(sortEachWeakByGrowth)
+		}
+		document.write(`6  відсортувати кожен тиждень за зростанням ${sortEachWeakByGrowth}`)
+
+
+
+
+	</script>
+
+
+</body>
+
+</html>

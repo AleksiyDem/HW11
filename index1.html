@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+
+
+	<h1> Задача 1</h1>
+
+
+	<p> Знайти суми елементів у вказаній області масиви розділені на 4 рівні частини </p>
+
+	<script>
+
+let table = [
+	[3, 5, 13, 20],
+	[10, 4, 8, 11],
+	[5, 8, 15, 19],
+	[7, 32, 41, 10],
+]
+
+// 1 . знайти сумму у області arr[0]
+
+let sum1 = 0
+table[0].forEach((row)=> sum1 += row)
+
+document.write(`1 знайти сумму у області arr[0]: ${sum1} <br><br>`)
+
+//-------------------------------------------------------------------------------
+// 2 знайти сумму у області arr[1]
+
+let sum2 = 0
+table[1].forEach((row)=> sum2 += row)
+
+document.write(`2 знайти сумму у області arr[1]: ${sum2} <br><br>`)
+
+//-------------------------------------------------------------------------------
+// 3 знайти сумму у області arr[2]
+
+let sum3 = 0
+table[2].forEach((row)=> sum3 += row)
+
+document.write(`3 знайти сумму у області arr[2] :${sum3} <br><br>`)
+
+//-------------------------------------------------------------------------------
+// 4 знайти сумму у області arr[3]
+let sum4 = 0
+table[3].forEach((row)=> sum4 += row)
+
+document.write(`4 знайти сумму у області arr[3] : ${sum4} <br><br>`)
+
+//-------------------------------------------------------------------------------
+//5 знайти сумму парних рядків 
+
+// для решіння цієї задачі зробив новий масив
+
+let priceArr = [
+	[10, 10, 10, 10],
+	[10, 10, 10, 10],
+	[10, 10, 10, 10],
+	[10, 10, 10, 10],
+]
+let sumPrice = 0
+for (let i = 0; i < priceArr.length; i = i+2) {
+for (let j = 0; j < 4; j++) {
+	sumPrice += priceArr[i][j]
+}
+}
+document.write(`5 знайти сумму парних рядків ${sumPrice}<br><br>`)
+
+//----------------------------------------------------------------------------------------------------
+// 6 5 знайти сумму не парних стовпців 
+
+let sumOddColumn = 0
+for(let i = 0; i < table.length; i++){
+	for (let j = 1; j < 4; j=j+2) {
+	sumOddColumn += table[i][j]
+	}	
+}
+document.write(`6 знайти сумму непарних стовпців ${sumOddColumn}<br><br>`)
+//----------------------------------------------------------------------------------------------------
+
+
+// ---------------7) У парних рядках – непарні стовпці, у непарних – парні.
+
+let sumOddRowWithEvenColumn = 0 
+let sumEvenRowWithOddColumn = 0
+
+for(let i1 = 0, i2 = 1; i1 < table.length; i1 = i1+2, i2= i2+2 ){
+	for (let j1 = 1, j2 = 0; j1<4; j1++, j2++ ){
+		sumEvenRowWithOddColumn += table[i1][j1]
+		sumOddRowWithEvenColumn += table[i2][j2]
+	}
+}
+document.write(`7 у парних рядках – непарні :${sumEvenRowWithOddColumn}<br> 7.1 у непарних – парні.${sumOddRowWithEvenColumn}<br><br>`)
+
+
+
+
+
+// function getSortByMaxInRow(tableIncome){
+// 	let arrMaxInRow = JSON.parse(JSON.stringify(...tableIncome))
+// 	for(let i = 0; i<arrMaxInRow.length; i++){
+// 		arrMaxInRow.sort((el1, el2) => el1 - el2)
+// 	}
+// 	return arrMaxInRow
+// }
+// let sortMaxInRow = getSortByMaxInRow(tableIncome)
+// document.write(`6  відсортувати кожен тиждень за зростанням ${sortMaxInRow}`)
+
+// console.log(sortMaxInRow)
+
+
+// // 1. random numbers
+
+// function getRandomNumber(minValue, maxValue) {
+// 	return minValue + Math.floor(Math.random() * (maxValue-minValue + 1))
+// }
+
+// // 2 створюю одновімірний масив ------------------------------------------------------------------
+
+//  function getRandomArray(arrLength, minValue, maxValue) {
+// 	const  arr = []
+// 	for (let i = 0; i < arrLength; i++) {
+// 		let randomNum = getRandomNumber(minValue, maxValue)
+// 		arr.push(randomNum)
+		
+// 	}
+// 	return arr
+//  }
+
+//  // 3. створюю фукцію генерування двовимірного масиву 
+
+//  function getRandomTable(rowsNum, columnNum, minValue, maxValue){
+// 	const table = []
+// for(let i = 0; i < rowsNum; i++ ) {
+// let randomRow = getRandomArray(columnNum, minValue, maxValue)
+// table.push(randomRow)
+// }
+// return table
+// }
+
+// let table = getRandomTable(4, 5, 5, 36)
+
+// document.write(table)
+// console.log(table)
+
+
+	
+	</script>
+
+
+</body>
+
+</html>

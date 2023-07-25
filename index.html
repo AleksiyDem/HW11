@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document Array</title>
+</head>
+
+<body>
+
+
+
+
+	<h1>Домашне завдання Урок № 11</h1>
+
+	<ol>
+		<li> <a href="./index1.html">Задача 1</a> </li>
+		<p>
+		</p>
+
+		<li> <a href="./index2.html">Задача 2</a> </li>
+		<p>
+		</p>
+		
+
+	</ol>
+
+
+	<script>
+
+		// to copy array let arr2 = [... arr1]
+		// to calculate , or do thamthing with array arr.map((element, index, base)=> )
+
+		//		     0  1  2  3  4  5   6  7   8   9   10  11
+		// let arr = [5, 5, 5, 5, 5, 5, 10, 10, 10, 10, 10, 10]
+
+
+		// function getSum(arr, startIndex, endIndex, step) {
+		// 	let sum = 0
+		// 	for (let i = startIndex; i <script endIndex; i += step)
+		// 		sum += arr[i]
+
+		// 	return sum
+		// }
+
+		// let yearSum = getSum(arr, 0, 12, 1)
+		// document.write(`${yearSum} <br>`)
+
+		// // first 6 month
+
+		// let fistHalfYear = getSum(arr, 0, 6, 1)
+		// document.write(fistHalfYear)
+
+		// // last 6 month
+
+		// let lastSixMonth = getSum(arr, 6, 12, 1)
+
+		// document.write(`${lastSixMonth} <br>`)
+
+		// //  summer
+		// let summerTime = getSum(arr, 5, 8, 1)
+
+		// document.write(`${summerTime} <br>`)
+		// // evenmonth
+		// let evenMonth = getSum(arr, 0, 12, 2)
+
+		// document.write(`${pairMonth} <br>`)
+		// // 1 month from each seassons
+
+		// let firstMonthSeasson = getSum(arr, 2, 12, 3)
+		// document.write(`${firstMonthSeasson} <br>`)
+
+		//forEach
+
+
+		//let arr = [5, 10, 23, 553, 3, 5, 7]
+
+
+		// arr.forEach((element, index, baseArrRef) => {
+		// 	if (element > 10)
+		// 		baseArrRef[index] = 100
+		// })
+		// document.write(arr)
+
+
+		// копія масиву з перетворенням елементів
+		// 1. array.from
+		// let arr = [5, 10, 23, 553, 3, 5, 7]
+
+		// let arr2 = Array.from(arr, (item, index) => item - 5)
+
+		// document.write(arr2)
+		// 2 .map
+
+		// let arr2 = arr.map(item => item * 2)
+		// document.write(arr2)
+
+		//  задача
+		// let price = [222, 123, 23, 23, 2000]
+		// let newPrice = price.map(item => item * 1.2)
+		// let newPricesToPrint = newPrice.map(item => item.toFixed(2))
+		// document.write(newPricesToPrint)
+
+		// дано масив з роками народженя вираховати скількі років
+
+		// let yearOfBirth = [1998, 1974, 2005, 2000]
+		// let yearOld = yearOfBirth.map(year => 2023 - year)
+		// document.write(yearOld)
+
+
+		// ---- ---------------------
+
+		// let names = [bob, mike, ann, den, ron, jack]
+		// let firstNameLatter = names.map((name) => name[0])
+		// document.write(firstNameLatter)
+
+		// ------------------
+
+		// let prices = [222, 123, 23, 23, 2000]
+
+		// let newPrices = prices.map((price) => price > 100 ? price * 2 : price)
+		// document.write(newPrices)
+
+
+
+
+		// let nameQantity = parseInt(prompt('enter the num of names'))
+
+		// let users = []
+		// for (let i = 0; i < nameQantity; i++) {
+		// 	userName = prompt('enter the name')
+		// 	users.push(userName)
+		// }
+		// document.write(users)
+
+		// while (users.length > 0) {
+		// 	let removeUsers = users.shift()
+		// 	document.write(removeUsers)
+		// }
+
+		// ------------------------------------------------------------------------------------
+		// let tempRange = [12, 2, 3, 3, 5, 4, 5, 3, 22, 2, 2]
+
+		// tempRange.splice(5, 3)
+
+		// document.write(tempRange)
+
+		// -------------------------------------------------
+
+		//let temp = [-12, 12, 14, 13, 14, 43, 35, 53, 57, 33, 35, 33]
+
+		// let fistHalfYear = temp.slice(0, 6)
+		// let secondHalfYear = temp.slice(6)
+		// document.write(`F.Half Year ${fistHalfYear}<br> Second Half Y. ${secondHalfYear}`)
+		// console.log(temp );
+
+		// indexOf & lastIndexOf
+
+		// let searchTemp = temp.indexOf(33)
+		// document.write(searchTemp)
+		// document.write('<br>')
+		// let userTempIndex = temp.lastIndexOf(33, -1)
+		// document.write(userTempIndex)
+
+		// let zeroIndexNum35 = temp.indexOf(35)
+		// document.write(zeroIndexNum35)
+		// document.write('<br>')
+		// let lastIndexNum35 = temp.lastIndexOf(35)
+
+		// let newArr = temp.slice(zeroIndexNum35 + 1, lastIndexNum35)
+		// document.write(newArr)
+
+
+		//  --------------------find ---------------
+		// let oddNum = temp.find((num) => num < 0)
+		// document.write(oddNum)
+
+		/// -------------- indexOf ---------------
+		// if (temp.indexOf(56) > 1) document.write('ok')
+		// else document.write('no')
+		// ------------------------------reduce-------------------------------------------------
+		// let arr = [-10, 15, 10, 10, 10]
+
+		// let sumArr = arr.reduce(
+		// 	(prevSum, el,) => prevSum + el
+		// )
+		// document.write(sumArr)
+
+		// ------------------- reduce-----------------
+
+		// let arr1 = [-10, 10, 2]
+		// let multipleArrNum = arr1.reduce((prevMultiple, el) => prevMultiple + el, 0
+
+		// )
+		// document.write(multipleArrNum)
+		// сумма парних елементів
+
+		// let arr = [12, 12, 14, 13, 124, 42, 4, 52, 24]
+
+
+		// let sum = arr.reduce(
+		// 	(prevSum, elem) => elem % 2 === 0 ? prevSum + elem : prevSum
+
+		// )
+		// document.write(sum)
+
+		//підрухувати кількість 7
+		// let arr = [7, 5, 3, 21, 6, 6, 7, 7]
+
+		// let countNun7 = arr.reduce(
+		// 	(prevNum, element) => element === 7 ? prevNum + 1 : prevNum, 0
+
+		// )
+		// document.write(countNun7)
+
+		// max elem from array
+
+		// let maxNum = arr.reduce(
+		// 	(prevNum, elem) => prevNum < elem ? elem : prevNum
+		// )
+		// document.write(maxNum)
+
+		// або max
+
+		// let maxNumArr = Math.max(...arr)
+		// document.write(maxNumArr)
+
+		//filter ----------------------------------
+
+		// let temprange = [-3, -5, 8, 4, 25, 44, 55, 60]
+		// // let newRangeTemp = temprange.filter(el => el > 0)
+		// // document.write(newRangeTemp)
+
+		// let newTempRange = temprange.filter(
+		// 	el => el > 8 && el < 55
+		// )
+
+		// document.write(newTempRange)
+		//----------------------------------
+
+
+		// if (temprange.some((temp) => temp < 0))
+		// 	document.write('yes')
+		// else ('no')
+
+		//------------------------------------------------------------
+
+		// let scores = [8, 9, 12, 4, 7, 1, 10, 8, 9, 2]
+
+
+		// if (scores.every(score => score >= 7))
+		// 	document.write('Yes')
+		// else
+		// 	document.write('no')
+
+		// if (scores.some(score => score === 2)) document.write('YES')
+		// else
+		// 	document.write('no')
+
+		// let scores = [8, -4, -7, 9, 12, 4, 7, 1, 10, 8, 9, 2]
+
+		// function getSortedArr(item1, item2) {
+		// 	if (item1 > item2) return 1
+		// 	else
+		// 		if (item1 < item2) return -1
+		// 		else return 0
+		// }
+
+
+		// scores.sort(getSortedArr)
+
+
+		// document.write(scores);
+
+		//----------------------------- sort + lamda viraz ))))))))
+
+
+		// let a = [8, -4, -7, 9, 12, 4, 7, 1, 10, 8, 9, 2]
+
+		// a.sort((b, c) => c - b
+		// )
+
+		// document.write(a)
+
+		//
+		// let arr = [56, 78, 2332, 23, 122, 4356, 122, 5337, 1211, 3444, 21, 3, 656, 2342]
+		// arr.forEach(
+		// 	(price, ind, baseArr) => {
+		// 		if (price > 1000) baseArr[ind] *= 0.7
+		// 	}
+		// )
+
+		// document.write(arr)
+
+		// ---------------
+
+		// let arr = [56, 78, 2332, 23, 122, 4356, 122, 5337, 1211, 3444, 21, 3, 656, 2342]
+
+		// arr.forEach(
+		// 	(price, index, baseArr) => {
+		// 		if (price > baseArr[0]) baseArr[index] *= 2
+		// 	}
+		// )
+		// document.write(arr)
+
+
+		// let incomes = [
+		// 	[2, 3, 4, 6, 4, 3, 2],
+		// 	[2, 3, 4, 6, 4, 3, 2],
+		// 	[2, 3, 4, 6, 4, 3, 2],
+		// 	[2, 3, 4, 6, 4, 3, 2],
+		// 	[2, 3, 4, 6, 4, 3, 2],
+
+		// ]
+
+		// let income = 0
+		// for (let incomeWeak = 0; incomeWeak <= 5; incomeWeak++) {
+		// 	for (let incomeDay = 0; incomeDay <= 6; incomeDay++) {
+		// 		income += incomes[incomeWeak][incomeDay]
+		// 	}
+		// }
+		//document.write(income)
+
+		// let sum = 0;
+		// for (let incomeWeak = 0; incomeWeak <= 5; incomeWeak++) {
+		// 	for (let incomeDay = 0; incomeDay <= 4; incomeDay++) {
+		// 		sum += incomes[incomeWeak][incomeDay]
+
+		// 	}
+		// 	document.write(sum)
+		// }
+
+		// function getTotalSum(incomes) {
+		// 	sum = 0
+		// 	for (let row of table) {
+		// 		for (let el of row) {
+		// 			sum += el
+		// 		}
+		// 	}
+		// 	return (sum)
+		// }
+		// let totalSum = getTotalSum(incomes)
+		// document.write(totalSum)
+
+
+		// --------------------------------------------------------------
+
+		// let table = [
+		// 	[11, 2, 35, 6],
+		// 	[32, 7],
+		// 	[65, 2, 7, 14, 78],
+		// 	[55, 10, 11],
+		// ]
+
+		// let sum = 0;
+		// for (let row = 0; row < table.length; row++)
+		// 	for (let colum = 0; row < table[row].length; colum++)
+		// 		sum += table[row][colum]
+
+		// document.write(sum)
+
+		// let usersHeight = [
+		// 	[167, 147, 149, 159, 178],
+		// 	[134, 134, 132, 134],
+		// 	[154, 152, 135],
+		// 	[134, 123],
+		// ]
+
+		// let maxheight = -Infinity
+		// for (let i = 0; i < usersHeight.length; i++) {
+		// 	for (let b = 0; b < usersHeight[i].length; b++) {
+
+		// 		if (maxheight < usersHeight[i][b]) maxheight = usersHeight[i][b]
+		// 	}
+		// }
+		// document.write(maxheight)
+
+		// //-----------------copy Arr with JSON
+		// let usersHeight = [
+		// 	[167, 147, 149, 159, 178],
+		// 	[134, 134, 132, 134],
+		// 	[154, 152, 135],
+		// 	[134, 123],
+		// ]
+
+		// // let newHeight = JSON.parse(JSON.stringify(usersHeight))
+
+		// // document.write(newHeight)
+
+		// //----------------flat ---------------------
+
+		// let usersMaxUserHeight = Math.max(...usersHeight.flat(Infinity))
+		// document.write(usersMaxUserHeight)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+</body>
+
+</html>
